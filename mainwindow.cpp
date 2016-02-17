@@ -39,6 +39,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     //ui->label->setText(Refesh_dis());
     MainWindow::Refesh_();
+   // MainWindow::DB();
 }
 
 MainWindow::~MainWindow()
