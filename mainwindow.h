@@ -17,7 +17,8 @@ public:
 
 private slots:
     void on_pushButton_clicked();
-
+    void Refesh_();
+//    QString Refesh_dis()；
     void on_pushButton_Refresh_clicked();
 
 private:

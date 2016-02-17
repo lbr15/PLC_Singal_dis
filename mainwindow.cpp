@@ -37,12 +37,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->label->setText(Refesh_dis());
+    //ui->label->setText(Refesh_dis());
+    MainWindow::Refesh_();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::Refesh_()
+{
+    QString dis="0";
+    dis = "SIG 寄存器数值 : ";
+    dis +=" || "+Byte_to_Bit(X_Data);
+    dis +=" || "+Byte_to_Bit(Y_Data);
+    ui->label->setText(dis);
 }
 
 bool flag=0;
@@ -118,5 +128,6 @@ void MainWindow::on_pushButton_Refresh_clicked()
     QString dis=Byte_to_Bit(X_Data);
     ui->label_Y->setText(dis);
     //中间继电器显示
-    ui->label->setText(Refesh_dis());
+    MainWindow::Refesh_();
+    //ui->label->setText(Refesh_dis());
 }
